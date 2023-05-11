@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class AlquilerBicicletas {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Bienvenido al sistema de alquiler de bicicletas");
+
+        // Pedir al usuario el tipo de alquiler
+        System.out.println("¿Por cuánto tiempo deseas alquilar la bicicleta?");
+        System.out.println("1. Por hora");
+        System.out.println("2. Por día");
+        System.out.println("3. Por semana");
+        int opcion = sc.nextInt();
+
+        // Pedir al usuario la cantidad de bicicletas a alquilar
+        System.out.println("¿Cuántas bicicletas deseas alquilar?");
+        int cantidad = sc.nextInt();
+
+        // Calcular el costo del alquiler
+        double costoTotal = 0;
+        double costoPorHora = 5;
+        double costoPorDia = 20;
+        double costoPorSemana = 70;
+
+        switch (opcion) {
+            case 1:
+                costoTotal = cantidad * costoPorHora;
+                break;
+            case 2:
+                costoTotal = cantidad * costoPorDia;
+                break;
+            case 3:
+                costoTotal = cantidad * costoPorSemana;
+                break;
+            default:
+                System.out.println("Opción inválida");
+                break;
+        }
+
+        // Mostrar el costo total del alquiler
+        System.out.println("El costo total del alquiler es: $" + costoTotal);
+    }
+}
